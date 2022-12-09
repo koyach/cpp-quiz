@@ -23,7 +23,7 @@ int main()
 	cin >> rot; 
 	cout << endl;
 
-	// insure rot is not bigger than size of vector
+	// insure rot is smaller than size
 	rot = rot % size;
 
 	// insure positive rotation amount
@@ -33,7 +33,8 @@ int main()
 	const int pos = size - rot;
 
 	// copy values to results and handle rollover
-	for (int i = 0; i < size; i++) results[(i + pos) % size] = values[i];
+	for (int i = 0; i < size; i++)
+		results[(i + pos) % size] = values[i];
 
 	for (const auto& result : results) cout << result << " ";
 
